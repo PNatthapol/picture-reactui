@@ -1,13 +1,29 @@
 import  {Form , Button, Card,Container} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./HomeSc2.css"
-
+import {
+    galleryShop,
+    getPic,
+    balance,
+    pictures,
+  } from "../util/interact.js"
  
 
+
 function HomeSc2() {
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Event: Form Submit');
+        const b = await balance();
+    console.log(b);
+    console.log("Test");
+    const pic = await getPic();
+    const picName = pic[1];
+    
+    console.log(pic);
+    console.log(picName);
+    const pictures1 = await pictures(1);
+    console.log(pictures1);
      };
   
    
@@ -22,7 +38,7 @@ function HomeSc2() {
             <Form.Control type="text" placeholder="id" />
             <Button variant="primary" type="submit"> ค้นหา </Button>
         </Form.Group>
-        <Form.Label>สถานะการจัดส่ง: กำลังจัดส่ง</Form.Label>
+        <Form.Label>สถานะการจัดส่ง: </Form.Label>
         </Form>
     </Card.Body>
     </Card>

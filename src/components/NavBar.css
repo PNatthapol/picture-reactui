@@ -1,0 +1,57 @@
+:root {
+    /* violet */
+    --primary-color: 111, 76, 255;
+    
+    /* white */
+    --text-color: 256, 256, 256;
+  }
+ 
+  .btn {
+    
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 10px 20px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    
+  }
+ 
+  .btn:hover {
+    transition: all 0.3s ease;
+    
+  }
+  
+ 
+  
+  
+  
+  .btn-glow:hover {
+    box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
+
+    
+  }
+  
+  /* https://sushi.com/ */
+  .btn-gradient {
+    background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+    border: 0;
+    color: rgba(var(--text-color));
+    
+  }
+
+  .rightbut{
+    margin-left: 25rem;
+
+  }
+  
+  .btn-gradient {
+    background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+    border: 0;
+    color: rgba(var(--text-color));
+  }
+  .nav-link{
+    padding-top: 1.5rem;
+  }

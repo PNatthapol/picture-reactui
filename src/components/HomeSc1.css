@@ -1,0 +1,51 @@
+
+
+.banner-bg {
+    height: 500px;
+    background: url("/src/bg2.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100%; 
+    
+}
+.banner-con {
+    padding-top: 200px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    display:block;
+    text-align: center;
+}
+.banner-text {
+    color: #fff;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .banner-text {
+        padding: 0 2rem;
+    }
+}
+:root {
+    /* violet */
+    --primary-color: 111, 76, 255;
+    
+    /* white */
+    --text-color: 256, 256, 256;
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #30CFD0, #c43ad6);
+    font-size: 6em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    text-align: center;
+  }
+  
+
+
+  
+ 

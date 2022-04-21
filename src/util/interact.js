@@ -25,3 +25,28 @@ export const pictures = async (id) => {
   const pictures = await galleryShop.methods.pictures(id).call();
   return pictures;
 };
+
+export const connectWallet = async () => {
+  if (window.ethereum) {
+    try {
+      const addressArray = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      const obj = {
+        
+        address: addressArray[0],
+      };
+      return obj;
+    } catch (err) {
+      return {
+        address: "",
+       
+      };
+    }
+  } else {
+    return {
+      address: ""
+      
+    };
+  }
+};

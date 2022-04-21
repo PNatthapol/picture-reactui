@@ -9,10 +9,6 @@ function SellSc1 () {
   const handleSubmit =  (e) => {
     e.preventDefault();
   };
-  
- 
-   
-   
     return (
         <Container fluid className="hsc2">
         <Card>

@@ -4,11 +4,14 @@ import "./BuySc1.css";
 
 const cardInfo = [
     {image:"https://drive.google.com/uc?id=1lIjow2adcNF-sDJDLS-rCtslkDWwy5Ba",title:"Hand",text:"1 ETH"},
-    {image:"https://drive.google.com/file/d/1lIjow2adcNF-sDJDLS-rCtslkDWwy5Ba/view?usp=sharing",title:"water",text:"2 ETH"},
+    {image:"https://drive.google.com/uc?id=17RbfMcdFlA_L76vg7fzXZi0qNnuYk13S",title:"water",text:"2 ETH"},
     {image:"https://drive.google.com/file/d/1lIjow2adcNF-sDJDLS-rCtslkDWwy5Ba/view?usp=sharing",title:"Cat",text:"1.5 ETH"}
 ];
 const rendercard = (card,index) =>{
  return (
+   
+
+  
     <Card style={{ width: '18rem' }} key ={index}  className="box">
   <Card.Img variant="top" src={card.image} />
   <Card.Body>
@@ -18,7 +21,8 @@ const rendercard = (card,index) =>{
     </Card.Text>
     <Button variant="primary">รายละเอียด</Button>
   </Card.Body>
-</Card>
+</Card> 
+
   )
 }
 function BuySc1() {

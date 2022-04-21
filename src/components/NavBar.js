@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useState} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import  Nav from "react-bootstrap/Nav";
@@ -11,11 +11,20 @@ import { Home } from "../pages/Home"
 import { Sell } from "../pages/Sell"
 import { Buy } from "../pages/Buy"
 import { Dashboard } from "../pages/Dashboard"
+import {
+  connectWallet
+} from "../util/interact.js"
 //import Button from "react-bootstrap/Button";
 
 
 function NavBar () {
-   
+  const [walletAddress, setWallet] = useState("");
+  
+  const connectWalletPressed = async () => {
+  const walletResponse = await connectWallet();
+  
+  setWallet(walletResponse.address);
+};
  return (
  <BrowserRouter>
     <Navbar bg="dark" variant="dark" sticky="top" expand="md">
@@ -37,7 +46,14 @@ function NavBar () {
             </Nav.Item>
             
             <Nav.Item className="ms-auto">
-            <Button variant="primary" >Connect Wallet</Button>
+            <Button variant="primary"onClick={connectWalletPressed} >{walletAddress.length > 0 ? (
+          "Connected: " +
+          String(walletAddress).substring(0, 6) +
+          "..." +
+          String(walletAddress).substring(38)
+        ) : (
+          <span>Connect Wallet</span>
+        )}</Button>
             </Nav.Item>
           </Nav>
          

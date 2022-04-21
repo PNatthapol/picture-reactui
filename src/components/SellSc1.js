@@ -12,7 +12,7 @@ function SellSc1 () {
     return (
         <Container fluid className="hsc2">
         <Card>
-          <Card.Header as="h5">ฝากขายรูปภาพ</Card.Header>
+          <Card.Header as="h5">ฝากขายรูปภาพพ</Card.Header>
           <Card.Body>
             <Form onSubmit={handleSubmit}>
 

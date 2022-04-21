@@ -3,7 +3,7 @@ import "./HomeSc1.css"
 
 
 let bannerData = {
-    title: "Welcome To Gallery",
+    title: "Welcome To Gallery" ,
     
 }
 
@@ -13,7 +13,7 @@ function HomeSc1() {
             <div className="container">
                 <div className="banner-con ">
                 <div className="text-gradient">
-                        <h1 >{bannerData.title}</h1>          
+                <p className="display-1">{bannerData.title}</p>      
                     </div>    
                                         
                 </div>

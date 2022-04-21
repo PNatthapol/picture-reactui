@@ -5,7 +5,7 @@ function Footer(){
      return (
 <div className = "footer1">
     <div className="footer-container">
-      <p>Gallery-Shop 2022</p>
+    <h6 align = 'center'>Copyright © Gallery-Shop 2022</h6>
     </div>
 </div>
     

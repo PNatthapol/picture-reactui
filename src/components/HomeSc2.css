@@ -4,6 +4,7 @@
     padding-right: 500px;
     text-align: center;
     
+    
 }
 .footer1{
     padding-top: 30px;
@@ -11,13 +12,17 @@
     ;margin-top: 50px;
     border-top-width: 0.5px;
     
+    
 }
 .card-body{
+    font-family: 'Prompt';
     padding-left: 3rem;padding-right: 3rem;
     text-align: center;
+    margin: auto;
+    
 }
 .card-header{
     border-top-style: solid;
     border-top-width: 3px;
-
+    
 }

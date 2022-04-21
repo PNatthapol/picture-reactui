@@ -9,6 +9,7 @@ import {
   } from "../util/interact.js"
  
 import React from 'react';
+
         
 
 function HomeSc2() {
@@ -31,22 +32,67 @@ function HomeSc2() {
     return (
         <Container fluid className="hsc2">
     <Card>
-    <Card.Header as="h5">ตรวจสอบสถานะการสั่งซื้อ</Card.Header>
+    <Card.Header as="h4">ตรวจสอบสถานะการสั่งซื้อ</Card.Header>
     <Card.Body>
         <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasictext">
-            <Form.Label>ค้นหาเลขรหัสของสินค้า</Form.Label>
+        <Form.Group className="mb-6" controlId="formBasictext">
+            <Form.Label className="mb-4" as="h5">ค้นหาเลขรหัสของสินค้า</Form.Label>
             <Row>
-    <Col>
-            <Form.Control  type="text" placeholder="id" />
-            </Col>
-    <Col>
-            <Button variant="primary" type="submit"> ค้นหา </Button>
-            </Col>
-  </Row>
+    <Col xs={9} >
+            <Form.Control  type="text" placeholder="รหัสสินค้า"  className="mb-3" size="lg"   />
+
+    </Col>
+    <Col xs={3}>
+            <Button variant="primary" type="submit" size="sm"> ค้นหา </Button>
+    </Col>
+
+            </Row>
         </Form.Group>
-        <Form.Label>สถานะการจัดส่ง: </Form.Label>
+        <Form.Label className="mb-4" as="h5">สถานะการจัดส่ง: </Form.Label>
+        
         </Form>
+
+
+        {/* export const Dashboard = () => {
+    return (
+<div className="tbdash">
+{/<Table striped bordered hover size="sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colSpan={2}>Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</Table>
+</Col> 
+</div>
+       
+     )
+
+};
+export default Dashboard */}
+
     </Card.Body>
     </Card>
 </Container>

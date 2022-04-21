@@ -1,24 +1,25 @@
-
-
 .banner-bg {
     height: 500px;
-    background: url("/src/bg2.jpg") no-repeat;
+    background: url("/src/bg2.jpg") round;
     background-size: cover;
     overflow: hidden;
     height: 100%; 
     
+    
 }
 .banner-con {
-    padding-top: 200px;
+    padding-top: 150px;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 400px;
     display:block;
     text-align: center;
+    max-width: 100%;
 }
 .banner-text {
     color: #fff;
     text-align: center;
+    
 }
 
 
@@ -37,15 +38,10 @@
   }
 
   .text-gradient {
-    background: linear-gradient(to right, #30CFD0, #c43ad6);
-    font-size: 6em;
+    background: linear-gradient(to right, #30CFD0, #fff);
+    font-size: 15em;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #fff;
     text-align: center;
   }
-  
-
-
-  
- 

@@ -1,9 +1,15 @@
 import React from "react";
+import BuySc1 from "../components/BuySc1";
 
 
 export const Buy = () => {
     return (
-        <p>hello world2</p> 
+       
+        <>
+        <BuySc1/>
+        
+        </>
+       
      )
 
 };

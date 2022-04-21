@@ -2,40 +2,49 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import  Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+//import "./NavBar.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from "../pages/Home"
+import { Sell } from "../pages/Sell"
+import { Buy } from "../pages/Buy"
+import { Dashboard } from "../pages/Dashboard"
 //import Button from "react-bootstrap/Button";
-let bannerData = {
-  
-  butname: "Connect Wallet"
-}
+
 
 function NavBar () {
    
- return (
+ return (<BrowserRouter>
     <Navbar bg="dark" variant="dark" sticky="top" expand="md">
       <Container>
-      <img alt=""src="/logogallery.png" 
-                    width="50"height="50" className="d-inline-block align-top"
-                 /><Navbar.Brand href="/">
+      <Navbar.Brand href="/">
           Gallery
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
+          <Nav className="me-auto">
             <Nav.Link as={Link} to="/buy">BUY</Nav.Link>
             <Nav.Link as={Link} to="/sell">SELL</Nav.Link>
             <Nav.Link as={Link} to="/dashboard">DASHBOARD</Nav.Link>
-            <button className ="btn btn-gradient btn-glow" >{ bannerData.butname }</button>
+            <Button variant="primary" >Connect Wallet</Button>
              
           </Nav>
-         <div className= "rightbut">
-            
-            </div>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>
+   
+  
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/sell" element={<Sell />} />
+    <Route path="/buy" element={<Buy />} />
+    <Route path="/dashboard" element={<Dashboard />} />
+    
+  </Routes>
+  </BrowserRouter>
   );
 }
 

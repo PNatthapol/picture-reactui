@@ -1,14 +1,23 @@
 .hsc2{
     margin-top: 50px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 500px;
+    padding-right: 500px;
+    text-align: center;
+    
 }
 .footer1{
     padding-top: 30px;
     border-top-style: solid
     ;margin-top: 50px;
     border-top-width: 0.5px;
+    
 }
 .card-body{
     padding-left: 3rem;padding-right: 3rem;
+    text-align: center;
+}
+.card-header{
+    border-top-style: solid;
+    border-top-width: 3px;
+
 }

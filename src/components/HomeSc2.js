@@ -17,8 +17,10 @@ import {React,useState} from 'react';
       return "กำลังเตรียมการจัดส่ง";
     } else if (status === "3"){
         return "ดำเนินการจัดส่งแล้ว";  
-    } else{
+    } else if (status === "0"){
         return "ไม่มีรูปภาพจำหน่าย";
+    } else {
+        return '';
     }
   } 
 

@@ -20,7 +20,7 @@ import {
 function NavBar () {
   const [walletAddress, setWallet] = useState("");
   
-  const connectWalletPressed = async () => {
+  const connectWalletPressed = async () => { 
   const walletResponse = await connectWallet();
   
   setWallet(walletResponse.address);
@@ -30,6 +30,13 @@ function NavBar () {
     <Navbar bg="dark" variant="dark" sticky="top" expand="md">
       <Container>
       <Navbar.Brand as={Link} to="/">
+      <img
+          alt=""
+          src="/logogallery.png"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{' '}
           Gallery
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -47,3 +47,5 @@ function BuySc1() {
 }
 
 export default BuySc1
+
+//

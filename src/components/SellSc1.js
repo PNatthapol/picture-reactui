@@ -15,20 +15,20 @@ function SellSc1 () {
           <Card.Header as="h5">ฝากขายรูปภาพ</Card.Header>
           <Card.Body>
             <Form onSubmit={handleSubmit}>
-
+            <Row>
+           <Col>
             
-          <div className="m-3">
-             <label className="mx-3">Choose file:</label>
-             <input accept="image/*" id="contained-button-file" multiple type="file"  
-             />
-           </div>
+           <label className="mx-3">Pathรูปภาพ</label>
+             <Form.Control    type="text" placeholder="path ที่อยู่รูปภาพ"  />
+           </Col>
+             </Row>
            <Row>
     <Col>
            <label className="mx-3">ชื่อรูปภาพ</label>
              <Form.Control    type="text" placeholder="ระบุชื่อรูปภาพ"  />
              </Col>
              <Col><label className="mx-3">ราคา</label>
-             <Form.Control    type="text" placeholder="ระบุราคาสินค้า"  />
+             <Form.Control    type="text" placeholder="ระบุราคาสินค้า หน่วยเป็น wei"  />
              </Col>
              </Row>
              <Col className="btnnpic">

@@ -17,8 +17,21 @@
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
 
+.hb {
+  margin-top: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+  text-align: center;
+  
+  
+}
+
+
 .box {
-  margin: 20px;
+  display: block;
+  margin: auto;
+
+  
 }
 
 .grid {
@@ -26,10 +39,13 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin: auto;
 }
 
 .grid > div {
-  flex-basis: calc(50% - 40px);
+  flex-basis: calc(30% - 20px);
+  margin: auto;
+  
 }
 
 .boxy {
@@ -58,5 +74,5 @@
   border-radius: 10px 10px 10px 10px;
 }
 .card-img-top{
-    height: 500px; width: 100%; display: block;
+    height: 270px; width: 100%; display: block;
 }

@@ -1,0 +1,33 @@
+/* *{
+    box-sizing: border-box;
+} */
+body{
+    background: #f7f7f7;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.container{
+    margin: 30px auto;
+    width: 350px;
+}
+.item-list{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.item-list li{
+background: white;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 12);
+padding: 15px;
+color: #333;
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+position: relative;
+}

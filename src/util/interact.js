@@ -14,11 +14,6 @@ export const getPic = async () => {
   return pic;
 };
 
-export const balance = async () => {
-  const balance = await web3.eth.getBalance(contractAddress);
-  return balance;
-};
-
 export const pictures = async (id) => {
   const pictures = await galleryShop.methods.pictures(id).call();
   return pictures;
@@ -42,6 +37,48 @@ export const connectWallet = async () => {
   } else {
     return {
       address: "",
+    };
+  }
+};
+
+export const buyPicture = async (
+  // address,
+  price,
+  id,
+  name,
+  deliverAddress,
+  tel
+) => {
+  const addressArray = await window.ethereum.request({
+    method: "eth_requestAccounts",
+  });
+  const obj = {
+    address: addressArray[0],
+  };
+
+  //set up transaction parameters
+  const transactionParameters = {
+    to: contractAddress, // Required except during contract publications.
+    from: obj.address, // must match user's active address.
+    value: web3.utils.toHex(price), // ราคาต้อง hash
+    gas: web3.utils.toHex("31000"), // gas limit ต้อง hash
+    data: galleryShop.methods
+      .buyPicture(id, name, deliverAddress, tel)
+      .encodeABI(),
+  };
+
+  //sign the transaction
+  try {
+    const txHash = await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [transactionParameters],
+    });
+    return {
+      status: "Okay " + txHash,
+    };
+  } catch (error) {
+    return {
+      status: "😥 " + error.message,
     };
   }
 };

@@ -16,11 +16,11 @@ export const TestPage = () => {
         <ul className="item-list">
           {data.map((element) => {
             return (
-              //   <TestCom
-              //     imagePath={element.imagePath}
-              //     price={element.price}
-              //     key={uuidv4()}
-              //   />
+              // <TestCom
+              //   imagePath={element.imagePath}
+              //   price={element.price}
+              //   key={uuidv4()}
+              // />
               <TestCom {...element} key={uuidv4()} /> // กรณีชื่อข้อมูลที่ใช้กับ propoty เหมือนกัน (imagePath,price)
             );
           })}

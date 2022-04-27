@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomeSc2.css";
 import {
   //getPic,
-  //balance,
   pictures,
 } from "../util/interact.js";
 
@@ -32,14 +31,6 @@ function HomeSc2() {
     const itemData = { tagid: tagid };
     console.log("Event: Form Submit");
 
-    //const b = await balance();
-    //console.log(b);
-    // console.log("Test");
-    //const pic = await getPic();
-    //const picName = pic[1];
-
-    //console.log(pic);
-    //console.log(picName);
     const pictures1 = await pictures(itemData.tagid);
     const status = pictures1["status"];
     setStatus(status);

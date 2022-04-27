@@ -1,14 +1,18 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
 import './DbTable.css'
-function DbTable() {
+//import {getPic} from "../util/interact.js"
+function DbTable() { 
+    
+
     const users = [
         {id: 1, address_wallet: 'Anil',  picName: 'anil@test.com',  name: '111' , price: '10ETH',
         deliverAddress:'xx',tel:'33',path: 'xx',status: '3', trackingNumber:'xx'},
         {id: 2, address_wallet: 'Burce', picName: 'bruce@test.com',  name: '222' , price: '10ETH',
-        deliverAddress:'xx',tel:'33',path: 'xx',status: '3', trackingNumber:'xx'},
+        deliverAddress:'xx',tel:'33',path: 'xx',status: '1', trackingNumber:'xx'},
         
       ]
+     
   return (
     <div >
       <h5 className ='topic'>ข้อมูลสินค้ารูปภาพ</h5>

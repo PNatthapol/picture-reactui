@@ -1,5 +1,9 @@
 [
-  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
   {
     "anonymous": false,
     "inputs": [
@@ -21,10 +25,26 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "id", "type": "uint256" },
-      { "internalType": "string", "name": "name", "type": "string" },
-      { "internalType": "string", "name": "deliverAddress", "type": "string" },
-      { "internalType": "string", "name": "tel", "type": "string" }
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "deliverAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "tel",
+        "type": "string"
+      }
     ],
     "name": "buyPicture",
     "outputs": [],
@@ -33,9 +53,21 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "price", "type": "uint256" },
-      { "internalType": "string", "name": "path", "type": "string" },
-      { "internalType": "string", "name": "picName", "type": "string" }
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "picName",
+        "type": "string"
+      }
     ],
     "name": "createSellPic",
     "outputs": [],
@@ -46,35 +78,101 @@
     "inputs": [],
     "name": "getPic",
     "outputs": [
-      { "internalType": "string[]", "name": "", "type": "string[]" },
-      { "internalType": "string[]", "name": "", "type": "string[]" },
-      { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
-      { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "pictures",
-    "outputs": [
-      { "internalType": "address", "name": "addressWallet", "type": "address" },
-      { "internalType": "string", "name": "picName", "type": "string" },
-      { "internalType": "string", "name": "name", "type": "string" },
-      { "internalType": "uint256", "name": "price", "type": "uint256" },
-      { "internalType": "string", "name": "deliverAddress", "type": "string" },
-      { "internalType": "string", "name": "tel", "type": "string" },
-      { "internalType": "string", "name": "path", "type": "string" },
-      { "internalType": "uint256", "name": "status", "type": "uint256" },
-      { "internalType": "string", "name": "trackingNumber", "type": "string" }
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "id", "type": "uint256" },
-      { "internalType": "string", "name": "tracking", "type": "string" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "pictures",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "addressWallet",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "picName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "deliverAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "tel",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "status",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "trackingNumber",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "tracking",
+        "type": "string"
+      }
     ],
     "name": "sendPicture",
     "outputs": [],

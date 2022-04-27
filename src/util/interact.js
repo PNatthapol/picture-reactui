@@ -5,7 +5,7 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
 const contractABI = require("../contract-abi.json");
-const contractAddress = "0xE0833cE71df82277B5B47aaf289182d82721682c"; // 0x04F4AD90b718F3b907D9bCa340d44640021aD541
+const contractAddress = "0x5A13E4e5E2C891863C850E13c2cF3E243ce6c1c1"; // 0x04F4AD90b718F3b907D9bCa340d44640021aD541
 
 export const galleryShop = new web3.eth.Contract(contractABI, contractAddress);
 

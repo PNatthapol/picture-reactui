@@ -22,8 +22,8 @@
   padding-left: 500px;
   padding-right: 500px;
   text-align: center;
-  
-  
+
+
 }
 
 
@@ -31,7 +31,7 @@
   display: block;
   margin: auto;
 
-  
+
 }
 
 .grid {
@@ -42,10 +42,10 @@
   margin: auto;
 }
 
-.grid > div {
+.grid>div {
   flex-basis: calc(30% - 20px);
   margin: auto;
-  
+
 }
 
 .boxy {
@@ -55,6 +55,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .boxy:hover {
   animation: boxyRotation 4s infinite linear;
 }
@@ -63,6 +64,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -73,6 +75,9 @@
   font-size: 5vh;
   border-radius: 10px 10px 10px 10px;
 }
-.card-img-top{
-    height: 270px; width: 100%; display: block;
+
+.card-img-top {
+  height: 350px;
+  width: 100%;
+  display: block;
 }

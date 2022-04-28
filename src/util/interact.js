@@ -61,7 +61,7 @@ export const buyPicture = async (
     to: contractAddress, // Required except during contract publications.
     from: obj.address, // must match user's active address.
     value: web3.utils.toHex(price), // ราคาต้อง hash
-    gas: web3.utils.toHex("31000"), // gas limit ต้อง hash
+    //gas: web3.utils.toHex("31000"), // gas limit ต้อง hash
     data: galleryShop.methods
       .buyPicture(id, name, deliverAddress, tel)
       .encodeABI(),

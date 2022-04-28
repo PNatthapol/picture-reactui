@@ -58,23 +58,23 @@ function Model(props) {
               src={props.imgpic}
               className="img-fluid hover-shadow"
               alt=""
-              style={{ maxWidth: "24rem" }}
+              style={{ maxWidth: "24rem"  ,display: 'block',margin: 'auto'}}
             />
             <div>รหัสภาพสินค้า: {props.idpic}</div>
             <div>ชื่อภาพ: {props.imgname}</div>
             <div>ราคา: {props.imgprice}</div>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label onChange={inputNamebuy} value={namebuy}>
+                <Form.Label >
                   ชื่อผู้สั่งซื้อ
                 </Form.Label>
-                <Form.Control type="text" placeholder="Enter email" />
+                <Form.Control type="text" placeholder="Enter email" onChange={inputNamebuy} value={namebuy} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label onChange={inputAddbuy} value={addbuy}>
+                <Form.Label >
                   ที่อยู่จัดส่ง
                 </Form.Label>
-                <Form.Control type="text" placeholder="Enter addressid" />
+                <Form.Control type="text" placeholder="Enter addressid" onChange={inputAddbuy} value={addbuy}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>เบอร์โทรศัพท์</Form.Label>

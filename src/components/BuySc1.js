@@ -19,27 +19,26 @@ function BuySc1() {
     return setModel(true);
   };
   useEffect(() => {
-    async function fetchMessage() {
-      const messages = await getPic();
+    async function getPicture() {
+      const pictures = await getPic();
 
-      setImagePath(messages[0]);
-      setPicName(messages[1]);
-      setPrice(messages[3]);
+      setImagePath(pictures[0]);
+      setPicName(pictures[1]);
+      setPrice(pictures[3]);
       let updateObject = {};
       let updateArray = [];
-      for (let i = 0; i < messages[2].length; i++) {
+      for (let i = 0; i < pictures[2].length; i++) {
         updateObject = {
-          image: messages[0][i],
-          title: messages[1][i],
-          id: messages[2][i],
-          text: messages[3][i],
+          image: pictures[0][i],
+          title: pictures[1][i],
+          id: pictures[2][i],
+          text: pictures[3][i],
         };
         updateArray.push(updateObject);
       }
       setDataPictures(updateArray);
-      console.log(messages);
     }
-    fetchMessage();
+    getPicture();
   }, []);
 
   console.log(imagePath);

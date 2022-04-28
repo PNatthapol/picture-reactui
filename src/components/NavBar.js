@@ -11,7 +11,6 @@ import { Home } from "../pages/Home";
 import { Sell } from "../pages/Sell";
 import { Buy } from "../pages/Buy";
 import { Dashboard } from "../pages/Dashboard";
-import { TestPage } from "../pages/TestPage";
 import { connectWallet } from "../util/interact.js";
 //import Button from "react-bootstrap/Button";
 
@@ -55,11 +54,6 @@ function NavBar() {
                   DASHBOARD
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={Link} to="/testpage">
-                  TESTPAGE
-                </Nav.Link>
-              </Nav.Item>
 
               <Nav.Item className="ms-auto">
                 <Button variant="primary" onClick={connectWalletPressed}>
@@ -83,7 +77,6 @@ function NavBar() {
         <Route path="/sell" element={<Sell />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/testpage" element={<TestPage />} />
       </Routes>
     </BrowserRouter>
   );

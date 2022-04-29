@@ -84,7 +84,8 @@ function Model(props) {
             />
             <div>รหัสภาพสินค้า: {props.idpic}</div>
             <div>ชื่อภาพ: {props.imgname}</div>
-            <div>ราคา: {props.imgprice}</div>
+            <div hidden>ราคา: {props.imgprice}</div>
+            <div >ราคา: {props.imgpriceeth} ETH</div>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>ชื่อผู้สั่งซื้อ</Form.Label>

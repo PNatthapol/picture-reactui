@@ -20,7 +20,7 @@ function BuySc1() {
   };
   useEffect(() => {
     async function getPicture() {
-      //const ethtext = '';
+      
       const pictures = await getPic();
 
       setImagePath(pictures[0]);

@@ -76,12 +76,13 @@ function Model(props) {
             ></button>
           </div>
           <div className="modal-body">
+            <div className="imgfl">
             <img
               src={props.imgpic}
               className="img-fluid hover-shadow"
               alt=""
-              style={{ maxWidth: "24rem", display: "block", margin: "auto" }}
-            />
+              style={{ maxWidth: "24rem", display: "block", margin: "auto"  }}
+            /></div>
             <div>รหัสภาพสินค้า: {props.idpic}</div>
             <div>ชื่อภาพ: {props.imgname}</div>
             <div hidden>ราคา: {props.imgprice}</div>

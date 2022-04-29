@@ -40,6 +40,7 @@ function DbTable() {
           picName: pictureTable[1][i],
           name: pictureTable[2][i],
           price: pictureTable[3][i],
+          priceeth: (pictureTable[3][i]/1000000000000000000).toFixed(16).replace(/\.?0+$/,""),
           deliveryAddress: pictureTable[4][i],
           tel: pictureTable[5][i],
           imagePath: pictureTable[6][i],
@@ -56,32 +57,7 @@ function DbTable() {
 
   console.log(dataPictures);
 
-  const users = [
-    {
-      id: 1,
-      address_wallet: "Anil",
-      picName: "anil@test.com",
-      name: "111",
-      price: "10ETH",
-      deliverAddress: "xx",
-      tel: "33",
-      path: "xx",
-      status: "3",
-      trackingNumber: "xx",
-    },
-    {
-      id: 2,
-      address_wallet: "Burce",
-      picName: "bruce@test.com",
-      name: "222",
-      price: "10ETH",
-      deliverAddress: "xx",
-      tel: "33",
-      path: "xx",
-      status: "1",
-      trackingNumber: "xx",
-    },
-  ];
+ 
 
   return (
     <div>
@@ -94,7 +70,7 @@ function DbTable() {
               <td>Address_wallet</td>
               <td>PicName</td>
               <td>Name</td>
-              <td>Price</td>
+              <td>Price (ETH)</td>
               <td>DeliverAddress</td>
               <td>Tel</td>
               <td>Path</td>
@@ -107,7 +83,7 @@ function DbTable() {
                 <td>{item.addressWallet}</td>
                 <td>{item.picName}</td>
                 <td>{item.name}</td>
-                <td>{item.price}</td>
+                <td>{item.priceeth}</td>
                 <td>{item.deliveryAddress}</td>
                 <td>{item.tel}</td>
                 <td>{item.imagePath}</td>

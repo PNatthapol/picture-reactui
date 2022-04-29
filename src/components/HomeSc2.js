@@ -26,17 +26,24 @@ function HomeSc2() {
   const [tagid, setTagid] = useState("");
   const [status, setStatus] = useState("");
   const [postID, setPostID] = useState("");
+  const [errortagid, setErrorTagid] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     const itemData = { tagid: tagid };
     console.log("Event: Form Submit");
-
+    if(tagid.length>0){
+      setErrorTagid('');
+    
     const pictures1 = await pictures(itemData.tagid);
     const status = pictures1["status"];
     setStatus(status);
     const postID = pictures1["trackingNumber"];
     setPostID(postID);
     console.log(status);
+  }else{
+    setErrorTagid('กรุณาป้อนเลขรหัสสินค้าให้ถูกต้อง');
+  }
+
   };
   const inputTagid = (event) => {
     setTagid(event.target.value);
@@ -68,6 +75,7 @@ function HomeSc2() {
                     onChange={inputTagid}
                     value={tagid}
                   />
+                  <small className ="fterror">{errortagid}</small>
                 </Col>
                 <Col xs={3}>
                   <Button variant="primary" type="submit" size="sm">

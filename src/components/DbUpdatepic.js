@@ -2,14 +2,28 @@ import { Card, Container, Form, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { React, useState } from "react";
 import { sendPicture } from "../util/interact.js";
+import "./DbUpdatepic.css"
 
 function DbUpdatepic() {
   const [tagid, setTagid] = useState("");
   const [postID, setPostID] = useState("");
+  const [errorid, setErrorid] = useState("");
+  const [errortagnumber, setErrortagnumber] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const status = await sendPicture(tagid, postID);
-    console.log(status);
+    if(tagid.length<1){
+      setErrorid('กรุณากรอกที่อยู่รูปภาพให้ถูกต้อง');
+      setErrortagnumber('');
+    } else if(postID.length<1){
+      setErrortagnumber('กรุณากรอกชื่อภาพให้ถูกต้อง');
+      setErrorid('');
+    }  else{
+      setErrorid('');
+      setErrortagnumber('');
+      const status = await sendPicture(tagid, postID);
+      console.log(status);
+    }
+   
   };
 
   const inputTagid = (event) => {
@@ -39,7 +53,7 @@ function DbUpdatepic() {
                   min="1"
                   onChange={inputTagid}
                   value={tagid}
-                />
+                /><small className ="fterror">{errorid}</small>
               </Col>
               <Col>
                 <Form.Label className="mb-4" as="h5">
@@ -52,7 +66,7 @@ function DbUpdatepic() {
                   size="lg"
                   onChange={inputPostID}
                   value={postID}
-                />
+                /><small className ="fterror">{errortagnumber}</small>
               </Col>
             </Row>
             <Col className="btnnpic">

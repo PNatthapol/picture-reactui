@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { buyPicture } from "../util/interact";
+import "./Model.css";
 function Model(props) {
   let modelStyle = {
     display: "block",
@@ -10,25 +11,46 @@ function Model(props) {
   const [addbuy, setAddbuy] = useState("");
   const [telephone, setTelephone] = useState("");
   const [status, setStatus] = useState("");
-
-  const buttonBuyPicture = async () => {
-    // ปุ่มกดซื้อ
-    const { status } = await buyPicture(
-      // "0xF4b3A6900370C5CA9E2ca648a2702C2f1752a423", // address wallet คนซื้อ
-      props.imgprice, // ราคาเป็น wei
-      props.idpic, // id รูป
-      namebuy, // ชื่อคน
-      addbuy, // ที่อยู่
-      telephone // เบอร์โทร
-    );
-    setStatus(status);
-    console.log(status);
-  };
+  const [errorname, setErrorName] = useState("");
+  const [erroraddressid, setErrorAddressID] = useState("");
+  const [errorTel, setErrorTel] = useState("");
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     //const itemData = { tagid: tagid };
     console.log("Event: Form Submit");
+    if(namebuy.length<1){
+      setErrorName('กรุณากรอกชื่อผู้รับสินค้าให้ถูกต้อง');
+      setErrorAddressID('');
+      setErrorTel('');
+    } else if(addbuy.length<1){
+      setErrorAddressID('กรุณากรอกที่อยู่รับสินค้าให้ถูกต้อง');
+      setErrorName('');
+      setErrorTel('');
+    } else if(telephone.length<1){
+      setErrorTel('กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง');
+      setErrorName('');
+      setErrorAddressID('');
+    } else{
+      setErrorName('');
+      setErrorAddressID('');
+      setErrorTel('');
+      
+          // ปุ่มกดซื้อ
+          const { status } = await buyPicture(
+            // "0xF4b3A6900370C5CA9E2ca648a2702C2f1752a423", // address wallet คนซื้อ
+            props.imgprice, // ราคาเป็น wei
+            props.idpic, // id รูป
+            namebuy, // ชื่อคน
+            addbuy, // ที่อยู่
+            telephone // เบอร์โทร
+          );
+          setStatus(status);
+          console.log(status);
+          props.hide();
+       
+    }
   };
   const inputNamebuy = (event) => {
     setNamebuy(event.target.value);
@@ -68,19 +90,19 @@ function Model(props) {
                 <Form.Label>ชื่อผู้สั่งซื้อ</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter email"
+                  placeholder="กรุณาระบุชื่อ นามสกุล"
                   onChange={inputNamebuy}
                   value={namebuy}
-                />
+                /> <small className ="fterror">{errorname}</small>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>ที่อยู่จัดส่ง</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter addressid"
+                  placeholder="กรุณาระบุที่อยู่จัดส่ง"
                   onChange={inputAddbuy}
                   value={addbuy}
-                />
+                /> <small className ="fterror">{erroraddressid}</small>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>เบอร์โทรศัพท์</Form.Label>
@@ -88,13 +110,14 @@ function Model(props) {
                   onChange={inputTelephone}
                   value={telephone}
                   type="number"
-                  placeholder="Enter tel"
-                />
+                  placeholder="กรุณาระบุเบอร์โทรศัพท์"
+                  
+                /> <small className ="fterror">{errorTel}</small>
               </Form.Group>
               <Button
                 type="submit"
                 className="btn btn-primary"
-                onClick={buttonBuyPicture}
+                //onClick={buttonBuyPicture}
               >
                 สั่งซื้อรูปภาพ
               </Button>

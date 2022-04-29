@@ -15,6 +15,7 @@ function DbTable() {
   const [trackingNumber, setTrackingNumber] = useState([]);
   const [addressWallet, setAddressWallet] = useState([]);
   const [dataPictures, setDataPictures] = useState([]);
+  
 
   useEffect(() => {
     async function getPictureTB() {
@@ -86,7 +87,7 @@ function DbTable() {
     <div>
       <h5 className="topic">ข้อมูลสินค้ารูปภาพ</h5>
       <div className="tb1">
-        <Table striped bordered hover size="lg">
+        <Table striped bordered hover size="lg" responsive>
           <tbody>
             <tr>
               <td>ID</td>

@@ -1,3 +1,7 @@
-.btnnpic{
+.btnnpic {
     padding-top: 20px;
+}
+
+.fterror {
+    color: red;
 }

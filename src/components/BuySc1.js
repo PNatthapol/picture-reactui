@@ -13,14 +13,13 @@ function BuySc1() {
   const [model, setModel] = useState(false);
   const [tempdata, setTempData] = useState([]);
 
-  const getData = (id, image, title, text,ethtext) => {
-    let tempData = [id, image, title, text,ethtext];
+  const getData = (id, image, title, text, ethtext) => {
+    let tempData = [id, image, title, text, ethtext];
     setTempData((item) => [1, ...tempData]);
     return setModel(true);
   };
   useEffect(() => {
     async function getPicture() {
-      
       const pictures = await getPic();
 
       setImagePath(pictures[0]);
@@ -34,7 +33,9 @@ function BuySc1() {
           title: pictures[1][i],
           id: pictures[2][i],
           text: pictures[3][i],
-          ethtext: (pictures[3][i]/1000000000000000000).toFixed(16).replace(/\.?0+$/,""),
+          ethtext: (pictures[3][i] / 1000000000000000000)
+            .toFixed(16)
+            .replace(/\.?0+$/, ""),
         };
         updateArray.push(updateObject);
       }
@@ -66,7 +67,7 @@ function BuySc1() {
                         <Card.Body>
                           <Card.Title>รหัสภาพสินค้า: {element.id}</Card.Title>
                           <Card.Text>ชื่อภาพ: {element.title}</Card.Text>
-                          <Card.Text >ราคา: {element.ethtext} ETH</Card.Text>
+                          <Card.Text>ราคา: {element.ethtext} ETH</Card.Text>
                           <Card.Text hidden>ราคา: {element.text} wei</Card.Text>
                           <Button
                             onClick={() =>

@@ -2,7 +2,19 @@ import { React, useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import "./DbTable.css";
 import { getPictureTable } from "../util/interact.js";
-
+function statusSender(status) {
+  if (status === "1") {
+    return "สินค้ากำลังขายอยู่";
+  } else if (status === "2") {
+    return "กำลังเตรียมการจัดส่ง";
+  } else if (status === "3") {
+    return "ดำเนินการจัดส่งแล้ว";
+  } else if (status === "0") {
+    return "ไม่มีรูปภาพจำหน่าย";
+  } else {
+    return "";
+  }
+}
 function DbTable() {
   const [id, setID] = useState([]);
   const [picName, setPicName] = useState([]);
@@ -16,7 +28,7 @@ function DbTable() {
   const [addressWallet, setAddressWallet] = useState([]);
   const [dataPictures, setDataPictures] = useState([]);
   
-
+  
   useEffect(() => {
     async function getPictureTB() {
       const pictureTable = await getPictureTable();
@@ -45,6 +57,7 @@ function DbTable() {
           tel: pictureTable[5][i],
           imagePath: pictureTable[6][i],
           status: pictureTable[7][i],
+          statusstr: statusSender(pictureTable[7][i]),
           trackingNumber: pictureTable[8][i],
           addressWallet: pictureTable[9][i],
         };
@@ -87,7 +100,7 @@ function DbTable() {
                 <td>{item.deliveryAddress}</td>
                 <td>{item.tel}</td>
                 <td>{item.imagePath}</td>
-                <td>{item.status}</td>
+                <td>{item.statusstr}</td>
                 <td>{item.trackingNumber}</td>
               </tr>
             ))}

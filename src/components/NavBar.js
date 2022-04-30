@@ -21,7 +21,10 @@ function NavBar() {
     const walletResponse = await connectWallet();
 
     setWallet(walletResponse.address);
+    console.log(walletResponse);
   };
+  
+  console.log(walletAddress);
   return (
     <BrowserRouter>
       <Navbar bg="dark" variant="dark" sticky="top" expand="md">

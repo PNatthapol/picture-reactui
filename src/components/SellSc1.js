@@ -50,7 +50,7 @@ function SellSc1() {
   return (
     <Container fluid className="hsc2">
       <Card>
-        <Card.Header as="h5">ฝากขายรูปภาพ</Card.Header>
+        <Card.Header as="h5">ขายรูปภาพ</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Row>
@@ -65,7 +65,7 @@ function SellSc1() {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col >
                 <label className="mx-3">ชื่อรูปภาพ</label>
                 <Form.Control
                   type="text"
@@ -79,10 +79,11 @@ function SellSc1() {
                 <label className="mx-3">ราคา</label>
                 <Form.Control
                   type="number"
-                  placeholder="ระบุราคา หน่วยเป็น wei"
+                  placeholder="ระบุราคา หน่วยเป็น ETH"
                   onChange={inputPrice}
                   value={price}
                 />
+                
                 <small className ="fterror">{errorprice}</small>
               </Col>
             </Row>

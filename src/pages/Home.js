@@ -1,12 +1,12 @@
 import React from "react";
 import HomeSc1 from "../components/HomeSc1"
-import HomeSc2 from "../components/HomeSc2"
+import BuySc1 from "../components/BuySc1";
 import Footer from "../components/Footer"
 export const Home = () => {
     return (
         <>
         <HomeSc1/>
-        <HomeSc2/>
+        <BuySc1/>
         <Footer/>
         </>
         

@@ -1,12 +1,13 @@
 import React from "react";
-import BuySc1 from "../components/BuySc1";
+import HomeSc2 from "../components/HomeSc2"
+
 //import Modal from 'react-modal';
 //import Popup from '../components/Popup';
 export const Buy = () => {
     return (
        
         <>
-        <BuySc1/>
+        <HomeSc2/>
         
         </>
        

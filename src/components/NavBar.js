@@ -44,7 +44,7 @@ function NavBar() {
             <Nav className="container-fluid">
               <Nav.Item>
                 <Nav.Link as={Link} to="/buy">
-                  BUY
+                TRACK
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -54,7 +54,7 @@ function NavBar() {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link as={Link} to="/dashboard">
-                  DASHBOARD
+                  MANAGE
                 </Nav.Link>
               </Nav.Item>
 

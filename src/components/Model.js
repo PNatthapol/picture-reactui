@@ -82,10 +82,10 @@ function Model(props) {
                 style={{ maxWidth: "24rem", display: "block", margin: "auto" }}
               />
             </div>
-            <div>รหัสภาพสินค้า: {props.idpic}</div>
-            <div>ชื่อภาพ: {props.imgname}</div>
-            <div hidden>ราคา: {props.imgprice}</div>
-            <div>ราคา: {props.imgpriceeth} ETH</div>
+            <div className="Pictext">รหัสภาพสินค้า: {props.idpic}</div>
+            <div className="Pictext">ชื่อภาพ: {props.imgname}</div>
+            <div hidden className="Pictext">ราคา: {props.imgprice}</div>
+            <div className="Pictext">ราคา: {props.imgpriceeth} ETH</div>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>ชื่อผู้สั่งซื้อ</Form.Label>

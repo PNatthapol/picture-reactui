@@ -65,7 +65,7 @@ function HomeSc2() {
                 ค้นหาเลขรหัสของสินค้า
               </Form.Label>
               <Row>
-                <Col xs={9}>
+                <Col xs={10}>
                   <Form.Control
                     type="number"
                     placeholder="รหัสสินค้า"
@@ -77,10 +77,9 @@ function HomeSc2() {
                   />
                   <small className ="fterror">{errortagid}</small>
                 </Col>
-                <Col xs={3}>
-                  <Button variant="primary" type="submit" size="sm">
-                    {" "}
-                    ค้นหา{" "}
+                <Col xs={2}>
+                  <Button variant="primary" type="submit" >
+                    {" "}ค้นหา{" "}
                   </Button>
                 </Col>
               </Row>

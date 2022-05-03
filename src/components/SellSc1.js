@@ -50,12 +50,12 @@ function SellSc1() {
   return (
     <Container fluid className="hsc2">
       <Card>
-        <Card.Header as="h5">ขายรูปภาพ</Card.Header>
+        <Card.Header className="Headtext" >ขายรูปภาพ</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col>
-                <label className="mx-3">Pathรูปภาพ</label>
+                <label className="Toptext">Path รูปภาพ</label>
                 <Form.Control
                   type="text"
                   placeholder="path ที่อยู่รูปภาพ"
@@ -64,9 +64,9 @@ function SellSc1() {
                 /><small className ="fterror">{errorpathPicture}</small>
               </Col>
             </Row>
-            <Row>
-              <Col >
-                <label className="mx-3">ชื่อรูปภาพ</label>
+            <Row xs={9}>
+              <Col xs={6}>
+                <label className="Toptext">ชื่อรูปภาพ</label>
                 <Form.Control
                   type="text"
                   placeholder="ระบุชื่อรูปภาพ"
@@ -75,17 +75,23 @@ function SellSc1() {
                 />
                 <small className ="fterror">{errorpictureName}</small>
               </Col>
-              <Col>
-                <label className="mx-3">ราคา</label>
+              <Col xs={5}>
+                <label className="Toptext">ราคา</label>
                 <Form.Control
+                  className="mb-3"
                   type="number"
                   placeholder="ระบุราคา หน่วยเป็น ETH"
                   onChange={inputPrice}
                   value={price}
                 />
-                
                 <small className ="fterror">{errorprice}</small>
               </Col>
+
+              <Col xs={1} >
+              
+              <label className="Ethtext"  >ETH</label>
+              </Col >
+
             </Row>
             <Col className="btnnpic">
               <Button variant="primary" type="submit">

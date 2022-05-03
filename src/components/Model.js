@@ -87,17 +87,17 @@ function Model(props) {
             <div hidden className="Pictext">ราคา: {props.imgprice}</div>
             <div className="Pictext">ราคา: {props.imgpriceeth} ETH</div>
             <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>ชื่อผู้สั่งซื้อ</Form.Label>
+              <Form.Group className="Bartext" controlId="formBasicEmail">
+                <Form.Label>ชื่อ-นามสกุล ผู้สั่งซื้อ</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="กรุณาระบุชื่อ นามสกุล"
+                  placeholder="กรุณาระบุ ชื่อ-นามสกุล"
                   onChange={inputNamebuy}
                   value={namebuy}
                 />{" "}
                 <small className="fterror">{errorname}</small>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="Bartext" controlId="formBasicEmail">
                 <Form.Label>ที่อยู่จัดส่ง</Form.Label>
                 <Form.Control
                   type="text"
@@ -107,7 +107,7 @@ function Model(props) {
                 />{" "}
                 <small className="fterror">{erroraddressid}</small>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="Bartext" controlId="formBasicEmail">
                 <Form.Label>เบอร์โทรศัพท์</Form.Label>
                 <Form.Control
                   onChange={inputTelephone}
@@ -117,9 +117,11 @@ function Model(props) {
                 />{" "}
                 <small className="fterror">{errorTel}</small>
               </Form.Group>
-              <Button
+              <Button 
+               
                 type="submit"
-                className="btn btn-primary"
+                //className="btn btn-primary"
+                className="BtnButton"
                 //onClick={buttonBuyPicture}
               >
                 สั่งซื้อรูปภาพ

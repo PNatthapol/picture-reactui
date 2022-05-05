@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
+
 import "./DbTable.css";
 import { getPictureTable } from "../util/interact.js";
+import MaterialTable from 'material-table';
 function statusSender(status) {
   if (status === "1") {
     return "สินค้ากำลังขายอยู่";
@@ -69,44 +70,26 @@ function DbTable() {
   }, []);
 
   console.log(dataPictures);
-
+  const columns = [
+    { title: 'ID', field: 'id' },
+    { title: 'Address_wallet', field: 'addressWallet' },
+    { title: 'PicName', field: 'picName' },
+    { title: 'Name', field: 'name' },
+    { title: 'Price (ETH)', field: 'priceeth' },
+    { title: 'DeliverAddress', field: 'deliveryAddress' },
+    { title: 'Tel', field: 'tel' },
+    { title: 'Path', field: 'imagePath' },
+    { title: 'Status', field: 'statusstr' },
+    { title: 'TrackingNumber', field: 'trackingNumber' }
+  ];
  
 
   return (
-    <div>
-      <h5 className="topic">ข้อมูลสินค้ารูปภาพ</h5>
-      <div className="tb1">
-        <Table striped bordered hover size="lg" responsive>
-          <tbody>
-            <tr>
-              <td>ID</td>
-              <td>Address_wallet</td>
-              <td>PicName</td>
-              <td>Name</td>
-              <td>Price (ETH)</td>
-              <td>DeliverAddress</td>
-              <td>Tel</td>
-              <td>Path</td>
-              <td>Status</td>
-              <td>TrackingNumber</td>
-            </tr>
-            {dataPictures.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.addressWallet}</td>
-                <td>{item.picName}</td>
-                <td>{item.name}</td>
-                <td>{item.priceeth}</td>
-                <td>{item.deliveryAddress}</td>
-                <td>{item.tel}</td>
-                <td>{item.imagePath}</td>
-                <td>{item.statusstr}</td>
-                <td>{item.trackingNumber}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </div>
+    <div style={{ padding: '30px' }}>
+      <h1>ข้อมูลสินค้ารูปภาพ</h1>
+      <div style={{ maxWidth: '100%' }}>
+    <MaterialTable columns={columns} data={dataPictures} title='' />
+  </div>
     </div>
   );
 }

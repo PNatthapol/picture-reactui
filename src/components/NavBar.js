@@ -17,23 +17,20 @@ import { connectWallet } from "../util/interact.js";
 function NavBar() {
   const [walletAddress, setWallet] = useState("");
   const [hideLink, setHidelink] = useState(true);
-  const addressadmin = 0xb854e9bfc49e4E2d2F68dE2EB98614E1eA863803;
+  const addressadmin = 0x9ce1c02ce72bc1392d63eb10c5a8ca0eeb1f70d3;
   const connectWalletPressed = async () => {
     const walletResponse = await connectWallet();
 
     setWallet(walletResponse.address);
     console.log(walletResponse);
     //console.log(walletAddress);
-    if(walletResponse.address == addressadmin){
+    if (walletResponse.address == addressadmin) {
       setHidelink(false);
-    }else{
+    } else {
       setHidelink(true);
     }
-    
   };
-  
-  
-  
+
   return (
     <BrowserRouter>
       <Navbar bg="dark" variant="dark" sticky="top" expand="md">
@@ -53,16 +50,16 @@ function NavBar() {
             <Nav className="container-fluid">
               <Nav.Item>
                 <Nav.Link as={Link} to="/buy">
-                TRACK
+                  TRACK
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item >
-                <Nav.Link as={Link} to="/sell" hidden ={hideLink}>
+              <Nav.Item>
+                <Nav.Link as={Link} to="/sell" hidden={hideLink}>
                   SELL
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="/dashboard"  hidden={hideLink}>
+                <Nav.Link as={Link} to="/dashboard" hidden={hideLink}>
                   MANAGE
                 </Nav.Link>
               </Nav.Item>

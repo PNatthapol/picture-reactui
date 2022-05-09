@@ -14,26 +14,30 @@ function SellSc1() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(pathPicture.length<1){
-      setErrorpathPicture('กรุณากรอกที่อยู่รูปภาพให้ถูกต้อง');
-      setErrorpictureName('');
-      setErrorprice('');
-    } else if(pictureName.length<1){
-      setErrorpictureName('กรุณากรอกชื่อภาพให้ถูกต้อง');
-      setErrorpathPicture('');
-      setErrorprice('');
-    } else if(price.length<1){
-      setErrorprice('กรุณากรอกราคาสินค้าให้ถูกต้อง');
-      setErrorpathPicture('');
-      setErrorpictureName('');
-    } else{
-      setErrorpathPicture('');
-      setErrorpictureName('');
-      setErrorprice('');
-      const pricetowei = price*1000000000000000000;
-      console.log(pricetowei);
-    const status = await createSellPicture(pricetowei, pathPicture, pictureName);
-    console.log(status);
+    if (pathPicture.length < 1) {
+      setErrorpathPicture("กรุณากรอกที่อยู่รูปภาพให้ถูกต้อง");
+      setErrorpictureName("");
+      setErrorprice("");
+    } else if (pictureName.length < 1) {
+      setErrorpictureName("กรุณากรอกชื่อภาพให้ถูกต้อง");
+      setErrorpathPicture("");
+      setErrorprice("");
+    } else if (price.length < 1) {
+      setErrorprice("กรุณากรอกราคาสินค้าให้ถูกต้อง");
+      setErrorpathPicture("");
+      setErrorpictureName("");
+    } else {
+      setErrorpathPicture("");
+      setErrorpictureName("");
+      setErrorprice("");
+      const pricetowei = price * 1000000000000000000;
+      console.log(String(pricetowei));
+      const status = await createSellPicture(
+        String(pricetowei),
+        pathPicture,
+        pictureName
+      );
+      console.log(status);
     }
   };
 
@@ -52,7 +56,7 @@ function SellSc1() {
   return (
     <Container fluid className="hsc2">
       <Card>
-        <Card.Header className="Headtext" >ขายรูปภาพ</Card.Header>
+        <Card.Header className="Headtext">ขายรูปภาพ</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Row>
@@ -63,7 +67,8 @@ function SellSc1() {
                   placeholder="path ที่อยู่รูปภาพ"
                   onChange={inputPathPicture}
                   value={pathPicture}
-                /><small className ="fterror">{errorpathPicture}</small>
+                />
+                <small className="fterror">{errorpathPicture}</small>
               </Col>
             </Row>
             <Row xs={9}>
@@ -75,7 +80,7 @@ function SellSc1() {
                   onChange={inputPictureName}
                   value={pictureName}
                 />
-                <small className ="fterror">{errorpictureName}</small>
+                <small className="fterror">{errorpictureName}</small>
               </Col>
               <Col xs={5}>
                 <label className="Toptext">ราคา</label>
@@ -86,14 +91,12 @@ function SellSc1() {
                   onChange={inputPrice}
                   value={price}
                 />
-                <small className ="fterror">{errorprice}</small>
+                <small className="fterror">{errorprice}</small>
               </Col>
 
-              <Col xs={1} >
-              
-              <label className="Ethtext"  >ETH</label>
-              </Col >
-
+              <Col xs={1}>
+                <label className="Ethtext">ETH</label>
+              </Col>
             </Row>
             <Col className="btnnpic">
               <Button variant="primary" type="submit">

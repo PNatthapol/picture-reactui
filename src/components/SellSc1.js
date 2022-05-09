@@ -7,7 +7,7 @@ import { createSellPicture } from "../util/interact.js";
 function SellSc1() {
   const [pathPicture, setPathPicture] = useState("");
   const [pictureName, setPictureName] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [errorpathPicture, setErrorpathPicture] = useState("");
   const [errorpictureName, setErrorpictureName] = useState("");
   const [errorprice, setErrorprice] = useState("");
@@ -30,7 +30,9 @@ function SellSc1() {
       setErrorpathPicture('');
       setErrorpictureName('');
       setErrorprice('');
-    const status = await createSellPicture(price, pathPicture, pictureName);
+      const pricetowei = price*1000000000000000000;
+      console.log(pricetowei);
+    const status = await createSellPicture(pricetowei, pathPicture, pictureName);
     console.log(status);
     }
   };

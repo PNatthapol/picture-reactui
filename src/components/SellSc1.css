@@ -9,21 +9,21 @@
 .Ethtext {
     padding-top: 52px;
     padding-bottom: 20px;
-    font-weight: bold;
+
 }
 
 
 .Headtext {
     padding-top: 20px;
     padding-bottom: 20px;
-    font-weight: bold;
-    font-size: 2.5em;
-    
+
+    font-size: 1.5rem;
+
 }
 
 .Toptext {
 
-    font-weight: bold;
+
     font-size: 1em;
     margin: 11px 0;
 }
